@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles.css">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">AniReact</a>
+      <ul>
+         <li><a href="#">Home</a></li>
+         <li><a href="#">Category</a></li>
+         <li><a href="#">Top-100</a></li>
+         <li><a href="#">Random anime</a></li>
+      </ul>
+    </header>
+
+    <section class="banner">
+      <div class="imgBx">
+        <img src="https://i.pinimg.com/originals/09/6d/f0/096df0eb195b8f0d9475924f9a1e9425.jpg" alt="" class="active">
+        <img src="https://image.winudf.com/v2/image/Y29tLmZtMzYwLnRoZWJlc3RhbmltZXdhbGxwYXBlcl9zY3JlZW5fMF8xNTE1ODc5MzcwXzAxNQ/screen-0.jpg?fakeurl=1&type=.jpg" alt="">
+        <img src="https://wallpaperset.com/w/full/9/1/e/225292.jpg" alt="">
+        <img src="https://images.wallpapersden.com/image/download/tanjirou-kamado-from-demon-slayer_67909_1920x1080.jpg" alt="">
+      </div>
+
+      <div class="contentBx">
+        <div class="active">
+          <h2>Slide 1</h2>
+          <p>Lorem ipsum dolor sit amet, consect</p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>Slide 2</h2>
+          <p>Lorem ipsum dolor sit amet, consect</p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>Slide 3</h2>
+          <p>Lorem ipsum dolor sit amet, consect</p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>Slide 4</h2>
+          <p>Lorem ipsum dolor sit amet, consect</p>
+          <a href="#">details</a>
+        </div>
+      </div>
+
+      <ul class="controls">
+        <li onclick="prevSlide();prevSlideText()"></li>
+        <li onclick="nextSlide();nextSlideText()"></li>
+      </ul>
+    </section>
+
+
+    <script type="text/javascript">
+      const imgBx = document.querySelector('imgBx');
+      const slides = imgBx.getElementsByTagName('img');
+      var i = 0;
+
+      function nextSlide() {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+      }
+
+      function prevSlide() {
+        slides[i].classList.remove('active');
+        i = (i - 1 + slides.length) % slides.length;
+        slides[i].classList.add('active');
+      }
+
+
+      const contentBx = document.querySelector('contentBx');
+      const slidesText = contentBx.getElementsByTagName('img');
+      var j = 0;
+
+      function nextSlideText() {
+        slides[j].classList.remove('active');
+        j = (j + 1) % slidesText.length;
+        slidesText[j].classList.add('active');
+      }
+
+      function prevSlideText() {
+        slidesText[j].classList.remove('active');
+        j = (j - j + slidesText.length) % slidesText.length;
+        slidesText[i].classList.add('active');
+    </script>
+
+  </body>
+</html>
